@@ -12,6 +12,7 @@ words into vectors) and a large language model (LLM) to summarize the results. T
 information changes frequently or in semi-real time. For example, new stock prices are published every 15 minutes.
 The json formatted data returned from the stock symbol service conists of a company description followed by a number of 
 financial metrics such as revenue, profit, etc.  
+
 == The Solution
 
 This solution patterns consists of the following components which are hosted on the Red Hat Openshift 
@@ -20,3 +21,4 @@ container platform:
 - Red Hat's Build of Apache Camel
 - Weaviate's Vector Database
 - The Ollama model server
+- A User Interface built with Gradio

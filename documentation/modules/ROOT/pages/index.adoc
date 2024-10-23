@@ -4,11 +4,11 @@
 :sectlinks:
 :doctype: book
 
-A brief introduction of this solution pattern.
+This solution pattern integrates a number of open source components that ingest and summarize
+financial stock symbol data as it becomes available. It mimics how a human might need to analyse and summarize information from 
+a variety of companies that trade on the NYSE and NASDAQ markets. It is intended to be used as a starting point for your own solution. 
 
-_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum_
-
-*Contributors:* _Your Name(s) here (can add links to your profile)_
+*Contributors:* Bob Kozdemba and Josh Reagan. Red Hat, Inc.
 
 ++++
  <br>
@@ -22,7 +22,8 @@ Solutions Patterns help you understand the art of the possible with Red Hat's po
 
 Common use cases that can be address with this architecture are:
 
-- xyz
-- xyz
+- Financial Analysis
+- Summarization of medical patient records
+- General Retreival Augmented Generation workflows
 
 include::01-pattern.adoc[]

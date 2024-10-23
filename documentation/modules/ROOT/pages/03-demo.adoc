@@ -21,14 +21,14 @@ Next, you can learn how to walkthrough this demo.
 == Run the demonstration
 
 === Before getting started
-To run this demo, you will need xpto. Adding to that, make sure to have:
+To run this demo, you will need an Openshift cluster with the following resources:
 
-* ABC
-* XYZ
-* XPTO
+* A worker node that is configured with 8 virtual CPUS, 16GB of RAM and an NVIDIA accelerator >= 16GB of GPU memory.
+* 100GB of storage available for persistent volumes.
 
 === Installing the demo
-Installation guide and basic test of the demo installation if needed
+** https://github.com/redhat-na-ssa/demo-ai-weaviate[The current installation guide]
+
 
 === Walkthrough guide
-How to run through the demo
+** https://github.com/redhat-na-ssa/demo-ai-weaviate[The current demo walkthrough guide]
