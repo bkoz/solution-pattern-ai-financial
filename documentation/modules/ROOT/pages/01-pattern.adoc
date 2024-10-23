@@ -1,7 +1,22 @@
 == The story behind this solution pattern
 
-A description of the story that was used to build the demo and architectures of this SP.
+This solution pattern uses a Retreival Augmented Generation (RAG) AI workflow to to summarize financial data
+from a stock symbol API service. The use of AI in this scenario provides a financial analyst
+with a starting point and is especially helpfull when comparing a number of different stock symbols at once.
+Data returned from a stock symbol service is often terse including many acronyms and abreviations. The goal is to 
+demonstrate how AI technologies can be used to summarize the financial data in a way that is 
+more concise and meaningful in a short period of time with minimal human intervention.
 
+A RAG workflow consists of a vector database, an embeddings model (used to convert
+words into vectors) and a large language model (LLM) to summarize the results. This approach is desirable when 
+information changes frequently or in semi-real time. For example, new stock prices are published every 15 minutes.
+The json formatted data returned from the stock symbol service conists of a company description followed by a number of 
+financial metrics such as revenue, profit, etc.  
 == The Solution
 
-This is a summary of the solution
+This solution patterns consists of the following components which are hosted on the Red Hat Openshift 
+container platform:
+
+- Red Hat's Build of Apache Camel
+- Weaviate's Vector Database
+- The Ollama model server
