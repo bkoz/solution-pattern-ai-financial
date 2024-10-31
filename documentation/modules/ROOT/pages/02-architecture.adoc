@@ -44,18 +44,16 @@ Data flow begins at the source with stock information made available
 via a RESTful API service hosted by Alpha Vantage. An ingest engine consisting
 of two Camel services take care of keeping the data fresh in the Weaviate
 vector database. The ingest processes are highly configurable and perform
-filtering and discarding of invalid or null data.
+filtering and discarding of invalid or null data. 
 
 image::rag-architecture.jpg[width=100%]
-
-Architecture write up.
 
 {empty}
 
 === Architecture
 
-As an alternative to model fone tuning, retreival Augmented Generation (RAG) provides a reasonable to this 
-solution with good accuracy.
+The heart of the architecture is a Weaviate vector
+database.
 
 ++++
   <br>

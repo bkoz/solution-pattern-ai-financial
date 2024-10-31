@@ -10,8 +10,10 @@ more concise and meaningful in a short period of time with minimal human interve
 A RAG workflow consists of a vector database, an embeddings model (used to convert
 words into vectors) and a large language model (LLM) to summarize the results. This approach is desirable when 
 information changes frequently or in semi-real time. For example, new stock prices are published every 15 minutes.
+As an alternative to fine tuning an LLM, Retreival Augmented Generation (RAG) provides a reasonable 
+approach to this solution with good accuracy.
 The json formatted data returned from the stock symbol service conists of a company description followed by a number of 
-financial metrics such as revenue, profit, etc.  
+financial metrics such as revenue, profit, market capitalization, etc.  
 
 == The Solution
 
