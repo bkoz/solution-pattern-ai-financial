@@ -4,9 +4,10 @@
 :sectlinks:
 :doctype: book
 
-This solution pattern integrates a number of open source components that ingest and summarize
-financial stock symbol data as it becomes available. It mimics how a human might need to analyse and summarize information from 
-a variety of companies that trade on the NYSE and NASDAQ markets. It is intended to be used as a starting point for your own solution. 
+This solution pattern integrates a number of open source technologies to create a solution that ingests and summarizes
+near real-time stock data. It mimics how a human would analyse and summarize financial information from 
+a variety of companies that trade on the NYSE and NASDAQ markets.
+It is intended to be used as a starting point for your own solution. 
 
 *Contributors:* Bob Kozdemba and Josh Reagan. Red Hat, Inc.
 

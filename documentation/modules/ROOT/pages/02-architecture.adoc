@@ -10,7 +10,7 @@ Introduction for the architecture of this solution pattern.
 == Common Challenges 
 
 - Capturing near real-time stock exchange. The makes periodic fine tuning
-of large language models prohibitive.
+of large language models prohibitive. 
 
 - Hosting AI services such as vector database and LLMs to address security
 and privacy concerns.   
@@ -41,7 +41,7 @@ A closer look at the services and components that make up this solution pattern.
 image::dataflow.jpg[width=100%]
 
 Data flow begins at the source with stock information made available 
-via an API service hosted by Alpha Vantage. An ingest engine consisting
+via a RESTful API service hosted by Alpha Vantage. An ingest engine consisting
 of two Camel services take care of keeping the data fresh in the Weaviate
 vector database. The ingest processes are highly configurable and perform
 filtering and discarding of invalid or null data.
@@ -53,6 +53,9 @@ Architecture write up.
 {empty}
 
 === Architecture
+
+As an alternative to model fone tuning, retreival Augmented Generation (RAG) provides a reasonable to this 
+solution with good accuracy.
 
 ++++
   <br>
