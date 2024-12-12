@@ -25,14 +25,14 @@ Addtional common use cases that can be address with this architecture are:
 
 * Summarization of unstructed data and documentation
 * Medical claims processing
-  - Improvement in staff productivity through automation of repetitive tasks
-  - Reduced error rates in claims validation
-  - Elevated customer satisfaction scores due to faster and accurate claims processing
+  ** Improvement in staff productivity through automation of repetitive tasks
+  ** Reduced error rates in claims validation
+  ** Elevated customer satisfaction scores due to faster and accurate claims processing
 * Customer Service 
-  - Chat Bots
-  - Improve the Customer Experience
-  - Access fresh/real-time product information
+  ** Chat Bots
+  ** Improve the Customer Experience
+  ** Access fresh/real-time product information
 * Summarizing Real Time Events
-  - A sports writer wants to summarize their notes on an event that an LLM was not trained on.
+  ** A sports writer wants to summarize their notes on an event that an LLM was not trained on.
 
 include::01-pattern.adoc[]
