@@ -12,23 +12,22 @@ Include here content related to potential existing demos: blogs, articles, recor
 [#demo-video]
 === Watch a demonstration
 
-In this video you can see xpto:
+In this video you can see a brief demonstration:
 
-video::3yULVMdqJ98[youtube, width=800, height=480]
+video::https://people.redhat.com/bkozdemb/downloads/fsi-rag.m4v[width=100%]
 
-Next, you can learn how to walkthrough this demo.
+=== Application Screen Shot
+image::app-screenshot.png[width=100%]
 
-== Run the demonstration
+Next, you can learn how to install this demo.
 
-=== Before getting started
-To run this demo, you will need an Openshift cluster with the following resources:
+== Installing and running the demonstration
 
-* A worker node that is configured with 8 virtual CPUS, 16GB of RAM and an NVIDIA accelerator >= 16GB of GPU memory.
+=== Prequisites
+To run this demo, you will need an Openshift v4.16.x cluster with the following resources:
+
+* A worker node that is configured with 8 virtual CPUS, 16GB of RAM and an NVIDIA accelerator with >= 16GB of GPU memory.
 * 100GB of storage available for persistent volumes.
 
 === Installing the demo
 ** https://github.com/redhat-na-ssa/demo-ai-weaviate[The current installation guide]
-
-
-=== Walkthrough guide
-** https://github.com/redhat-na-ssa/demo-ai-weaviate[The current demo walkthrough guide]

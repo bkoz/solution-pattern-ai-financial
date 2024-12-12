@@ -6,6 +6,9 @@
 
 = Developer Resources
 
+== Deployment
 * https://github.com/redhat-na-ssa/demo-ai-weaviate[The git repo of the source code]
+
+== Further reading
 * https://www.redhat.com/en/blog/building-powerful-applications-weaviate-and-red-hat-openshift-retrieval-augmented-generation-workflow[A blog post related to running vector databases on Red Hat Openshift]
 

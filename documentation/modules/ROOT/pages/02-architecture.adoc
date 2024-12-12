@@ -74,9 +74,11 @@ image::rag-architecture.jpg[width=100%]
 
 === Architecture
 
+=== Ingest Engine
+
 ==== Weaviate vector database 
-The Weaviate vector database is installed using the helm installer which allows for enterprise features including
-API key token authentication and data sharding. Weaviate's cloud-native design allows for horizontal scaling and efficient resource consumption, 
+The Weaviate vector database is installed using the helm installer which allows for enterprise features to be enabled including
+API key token authentication and data sharding. Weaviate's cloud-native design supports horizontal scaling and efficient resource consumption, 
 allowing it to handle large volumes of data and user requests easily. Interested readers are encouraged to find out more 
 about https://www.redhat.com/en/blog/building-powerful-applications-weaviate-and-red-hat-openshift-retrieval-augmented-generation-workflow[the benefits of hosting Weaviate on Openshift].
 
@@ -86,12 +88,14 @@ operating systems and provides good integration and compatibility with the open 
 is deployed on Openshift using a https://github.com/openshift/source-to-image[standard source-to-image workflow]. Details 
 can be found in this repository.
 
-++++
-  <br>
-  <h3> Embed HTML by surrounding it with with four +s before and after. </h3>
-  <span>View the ascii doc to learn more</span>
-  <br> 
-++++
+==== User Interface
+The UI is written in Python using the Gradio framework and is deployed using Openshift source-to-image workflow. 
+Example queries are presented to the user as pushbuttons to perform semantic
+and generative queries. Users may also enter custom queries and prompts.
+
+==== Developer IDE 
+Provided by Red Hat Openshift DevSpaces, this IDE allows developers to work with the codebase and test their changes
+in a live environment.
 
 
 === Different decorators
