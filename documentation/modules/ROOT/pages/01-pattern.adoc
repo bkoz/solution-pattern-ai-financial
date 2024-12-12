@@ -7,20 +7,23 @@ Data returned from a stock symbol service is often terse including many acronyms
 demonstrate how AI technologies can be used to summarize the financial data in a way that is 
 more concise and meaningful in a short period of time with minimal human intervention.
 
-A RAG workflow consists of a vector database, an embeddings model (used to convert
-words into vectors) and a large language model (LLM) to summarize the results. This approach is desirable when 
-information changes frequently or in semi-real time. For example, new stock prices are published every 15 minutes.
-As an alternative to fine tuning an LLM, Retreival Augmented Generation (RAG) provides a reasonable 
-approach to this solution with good accuracy.
-The json formatted data returned from the stock symbol service conists of a company description followed by a number of 
+The solution begins by using Red Hat Build of Apache Camel to ingest and syncronize publicly aviable financial data
+into a vector database powered by Weaviate. The json formatted data returned from the stock symbol service conists of a company description followed by a number of 
 financial metrics such as revenue, profit, market capitalization, etc.  
+
+The RAG workflow consists of a vector database, an embeddings model (used to convert
+words into vectors) and a large language model (LLM) to summarize the results which is presented to the user. 
+This approach is desirable when information changes frequently or in semi-real time. 
+For example, new stock prices are published every 15 minutes.
+As an alternative to fine tuning an LLM to recognize your private knowledge, Retreival Augmented Generation (RAG) 
+provides a reasonable approach to this solution with good accuracy.
 
 == The Solution
 
-This solution patterns consists of the following components which are hosted on the Red Hat Openshift 
+This solution patterns consists of the following open source components which are hosted on the Red Hat Openshift 
 container platform:
 
-- Red Hat's Build of Apache Camel
-- Weaviate's Vector Database
+- Red Hat Build of Apache Camel
+- Weaviate Vector Database
 - The Ollama model server
-- A User Interface built with Gradio
+- A Cloud Native User Interface built with Gradio

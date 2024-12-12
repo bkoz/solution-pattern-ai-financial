@@ -13,7 +13,7 @@ content:
       start_path: documentation
 asciidoc:
   attributes:
-    title: "Red Hat Solution Pattern: Performing Financial Analysis using Generative AI and Red Hat Build of Apache Camel on Openshift"
+    title: "Red Hat Solution Pattern: Summarizing Financial Data using Generative AI and Red Hat Build of Apache Camel on Openshift"
   extensions:
     - ./lib/remote-include-processor.js
     - ./lib/tab-block.js

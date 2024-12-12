@@ -9,11 +9,15 @@ Introduction for the architecture of this solution pattern.
 
 == Common Challenges 
 
-- Capturing near real-time stock exchange. The makes periodic fine tuning
-of large language models prohibitive. 
+This solution pattern address the following challenges:
 
-- Hosting AI services such as vector database and LLMs to address security
-and privacy concerns.   
+- Integrating private knowledge into a generative AI workflow.
+
+- Capturing abd syncronizing near real-time stock exchange data makes periodic fine tuning
+of LLMs prohibitive. 
+
+- Exposing private data sources via externally hosted API services Hosting AI services raises security
+and privacy concerns for most enterprises.
 
 [#tech_stack]
 == Technology Stack
@@ -40,11 +44,29 @@ A closer look at the services and components that make up this solution pattern.
 
 image::dataflow.jpg[width=100%]
 
+==== Ingest Engine
 Data flow begins at the source with stock information made available 
-via a RESTful API service hosted by Alpha Vantage. An ingest engine consisting
-of two Camel services take care of keeping the data fresh in the Weaviate
+via a RESTful API service hosted by Alpha Vantage. The ingest engine consisting
+of two Camel services takes care of keeping data fresh in the Weaviate
 vector database. The ingest processes are highly configurable and perform
-filtering and discarding of invalid or null data. 
+filtering and discarding of invalid or null data. As stock symbol information is
+read in, vector embeddings are generated and stored in the Weaviate vector database along
+with the financial entities for each stock symbol. An example json record is available 
+in the https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo[AlphaVantage API documentation]. 
+
+==== Vector Database
+The vector database used is Weaviate. Weaviate is a highly performant and scalable open-source vector database 
+that simplifies the development of AI applications. Built-in vector and hybrid search, easy-to-connect machine 
+learning models, and a focus on data privacy enable developers of all levels to build, iterate, and scale AI 
+capabilities faster.
+
+==== Machine Learning (ML) models
+This solution pattern makes use of two ML models, an enbeddings model (`all-minilm`) and an LLM (`granite3-dense:8b`)
+which is configurable at run time. The enbeddings model is used to generate vector embeddings for each stock symbol and
+the LLM summarizes the stock information. Granite a series of LLMs developed by IBM, specifically designed 
+for enterprise applications, focusing on business use cases like code generation, summarization, and classification, 
+with a strong emphasis on security and data privacy, all while being open-source under the Apache 2.0 license.
+
 
 image::rag-architecture.jpg[width=100%]
 
@@ -52,8 +74,17 @@ image::rag-architecture.jpg[width=100%]
 
 === Architecture
 
-The heart of the architecture is a Weaviate vector
-database.
+==== Weaviate vector database 
+The Weaviate vector database is installed using the helm installer which allows for enterprise features including
+API key token authentication and data sharding. Weaviate's cloud-native design allows for horizontal scaling and efficient resource consumption, 
+allowing it to handle large volumes of data and user requests easily. Interested readers are encouraged to find out more 
+about https://www.redhat.com/en/blog/building-powerful-applications-weaviate-and-red-hat-openshift-retrieval-augmented-generation-workflow[the benefits of hosting Weaviate on Openshift].
+
+==== Ollama Model Server
+https://github.com/ollama/ollama[Ollama] is a popular and easy to use platform to host and serve LLMs. It supports a number of
+operating systems and provides good integration and compatibility with the open source ecosystem including Weaviate. Ollama
+is deployed on Openshift using a https://github.com/openshift/source-to-image[standard source-to-image workflow]. Details 
+can be found in this repository.
 
 ++++
   <br>

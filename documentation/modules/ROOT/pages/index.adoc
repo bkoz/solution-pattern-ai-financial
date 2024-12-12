@@ -5,11 +5,11 @@
 :doctype: book
 
 This solution pattern integrates a number of open source technologies to create a solution that ingests and summarizes
-near real-time stock data. It mimics how a human would analyse and summarize financial information from 
+near real-time stock data. It mimics how a human would analyze and summarize financial information from 
 a variety of companies that trade on the NYSE and NASDAQ markets.
 It is intended to be used as a starting point for your own solution. 
 
-*Contributors:* Bob Kozdemba and Josh Reagan. Red Hat, Inc.
+*Contributors:* Bob Kozdemba and Josh Reagan, Principal Specialist Solution Architects, Red Hat, Inc.
 
 ++++
  <br>
