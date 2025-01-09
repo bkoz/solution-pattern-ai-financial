@@ -7,6 +7,7 @@
 
 Introduction for the architecture of this solution pattern.
 
+[#challenges]
 == Common Challenges 
 
 This solution pattern address the following challenges:

@@ -30,4 +30,4 @@ To run this demo, you will need an Openshift v4.16.x cluster with the following 
 * 100GB of storage available for persistent volumes.
 
 === Installing the demo
-** https://github.com/redhat-na-ssa/demo-ai-weaviate[The current installation guide]
+** Follow the https://github.com/redhat-na-ssa/demo-ai-weaviate[installation guide]

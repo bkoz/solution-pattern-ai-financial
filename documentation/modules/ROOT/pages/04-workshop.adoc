@@ -4,8 +4,14 @@
 :doctype: book
 
 = Workshop
+During this workshop youwill learn how to:
 
-what is this workshop and what will be learned
+- Get experience with a Weaviate enterprise installation.
+- Learn how to use the Weaviate Python client.
+- Learn how python application are deployed on Openshift
+- Work with the Gradio library to build a user interface.
+- Work with an LLM server on Openshift
+- Understand the various components that make up a RAG solution
 
 == Installing the workshop environment
 === Before getting started

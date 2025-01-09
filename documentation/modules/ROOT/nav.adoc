@@ -1,9 +1,10 @@
-* xref:index.adoc[{counter:module}. Home page]
+* xref:index.adoc[{counter:module}. Introduction]
 ** xref:index.adoc#use-cases[{module}.{counter:submodule1} Use cases]
 ** xref:index.adoc#_the_story_behind_this_solution_pattern[{module}.{counter:submodule1} The story behind this solution pattern]
 ** xref:index#_the_solution[{module}.{counter:submodule1} The solution]
 
 * xref:02-architecture.adoc[{counter:module}. Architecture]
+** xref:02-architecture.adoc#challenges[{module}.{counter:submodule2}. Common Challenges]
 ** xref:02-architecture.adoc#tech_stack[{module}.{counter:submodule2}. Technology stack]
 ** xref:02-architecture.adoc#in_depth[{module}.{counter:submodule2}. An in-depth look at the solution's architecture]
 ** xref:02-architecture.adoc#more_tech[{module}.{counter:submodule2}. More about the technology stack]
