@@ -71,8 +71,9 @@ and update them with your values.
 
 ===== Stock Overview Syncronizer
 
-Install the AlphaVantage syncronizer in the `camel` namespace. Configure the 
-`av-overview-sync-configmap` configmap to use the `granite3-dense:8b` model.
+Install the AlphaVantage syncronizer in the `camel` namespace. Configure the `src/main/jkube/configmap.yml`
+to use the `all-minilm` vectorizer model 
+and the `granite3-dense:8b` generative model.
 
 - `git clone https://github.com/joshdreagan/av-overview-sync.git`
 - `cd av-overview-sync`
