@@ -22,7 +22,8 @@ During this workshop youwill learn how to:
   * Version 4.16 or greater
   * A worker node with a minimum of 4 CPUs, 16 GB of memory and 
   a single NVIDIA T4 GPU with 16GB of memory. (AWS `g4dn.xlarge` or equivalent)
-  * The terminal window operator
+  * The https://docs.openshift.com/container-platform/4.17/web_console/web_terminal/installing-web-terminal.html[web-terminal]
+operator
 - A client system with the following software installed:
   * https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest[Helm]
   * https://maven.apache.org/download.cgi[Maven]
@@ -82,9 +83,14 @@ Install the AlphaVantage syncronizer in the `camel` namespace. Configure the
 
 ==== Gradio UI and application.
 
-From a terminal, create an OpenShift application. Obtain the 
+From a terminal, create an OpenShift application. 
+
+[NOTE]
+====
+Obtain the 
 https://raw.githubusercontent.com/redhat-na-ssa/demo-ai-weaviate/refs/heads/main/deploy/weaviate/configmap.yaml[Weaviate API key]
 and use it to create the RAG application.
+====
 
 - `oc new-app python~https://github.com/redhat-na-ssa/demo-ai-weaviate --name rag --context-dir=/src --env WEAVIATE_API_KEY=your_weaviate_admin-api-key`
 
