@@ -15,5 +15,91 @@ During this workshop youwill learn how to:
 
 == Installing the workshop environment
 === Before getting started
+
+==== Prequisites
+
+- An OpenShift Cluster
+  * Version 4.16 or greater
+  * A worker node with a minimum of 4 CPUs, 16 GB of memory and 
+  a single NVIDIA T4 GPU with 16GB of memory. (AWS `g4dn.xlarge` or equivalent)
+  * The terminal window operator
+- A client system with the following software installed:
+  * https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest[Helm]
+  * https://maven.apache.org/download.cgi[Maven]
+  * https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/[The Openshift `oc` cli]
+
 === Installing the environment
+
+The following services on OpenShift are required:
+
+==== Weaviate Vector Database
+
+- `git clone https://github.com/redhat-na-ssa/demo-ai-weaviate`
+- `cd demo-ai-weaviate`
+- `oc apply -k deploy`
+
+==== Ollama LLM Server
+
+- `oc apply -k ollama/deploy`
+
+Pull the necessary ML models:
+
+Login to the Openshift console, open a terminal window in the `ollama` project
+and run the following commands.
+
+- `curl http://ollama.ollama/api/pull -d '{"model" : "all-minilm"}'`
+
+- `curl http://ollama.ollama/api/pull -d '{"model" : "granite3-dense:8b"}'`
+
+==== Stock Overview Ingestion Engine
+
+===== Caching Proxy
+
+Follow the instructions to install the caching proxy in the `camel` namespace.
+
+- `oc new-project camel`
+- `git clone https://github.com/joshdreagan/av-caching-proxy.git`
+- `cd av-caching-proxy`
+
+Create the `deployment.yml`, and `configmap.yml` files from the available templates
+and update them with your values.
+
+- `cp src/main/jkube/deployment.yml.template src/main/jkube/deployment.yml`
+- `cp src/main/jkube/configmap.yml.template src/main/jkube/configmap.yml`
+- `mvn -P openshift clean package oc:deploy`
+
+===== Stock Overview Syncronizer
+
+Install the AlphaVantage syncronizer in the `camel` namespace. Configure the 
+`av-overview-sync-configmap` configmap to use the `granite3-dense:8b` model.
+
+- `git clone https://github.com/joshdreagan/av-overview-sync.git`
+- `cd av-overview-sync`
+- `cp src/main/jkube/deployment.yml.template src/main/jkube/deployment.yml`
+- `cp src/main/jkube/configmap.yml.template src/main/jkube/configmap.yml`
+- `cp src/main/jkube/secret.yml.template src/main/jkube/secret.yml`
+- `mvn -P openshift clean package oc:deploy`
+
+==== Gradio UI and application.
+
+From a terminal, create an OpenShift application.
+
+- `oc new-app \
+python~https://github.com/redhat-na-ssa/demo-ai-weaviate
+  --name rag --context-dir=/src
+  --env WEAVIATE_API_KEY=your_weaviate_admin-api-key`
+
+Expose the app with an external route and have fun.
+
+- `oc create route edge --service rag --insecure-policy=Redirect`
+
 === Running the workshop
+
+- Review the https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo[IBM stock symbol json] to
+explain the use case.
+- Review the dataflow diagram to explain the workflow.
+- Review the architecture diagram to explain the Openshift services.
+- Run the `rag` application.
+  * Try different search terms and see how the results change.
+  * Vary the limits and see the different number of returned results.
+  * Try different LLM prompts.

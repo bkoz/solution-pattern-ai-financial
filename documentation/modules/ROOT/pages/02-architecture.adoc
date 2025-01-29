@@ -14,7 +14,7 @@ This solution pattern address the following challenges:
 
 - Integrating private knowledge into a generative AI workflow.
 
-- Capturing abd syncronizing near real-time stock exchange data makes periodic fine tuning
+- Capturing and syncronizing near real-time stock exchange data makes periodic fine tuning
 of LLMs prohibitive. 
 
 - Exposing private data sources via externally hosted API services Hosting AI services raises security
