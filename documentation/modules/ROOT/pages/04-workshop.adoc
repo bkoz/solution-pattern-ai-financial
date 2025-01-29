@@ -82,7 +82,9 @@ Install the AlphaVantage syncronizer in the `camel` namespace. Configure the
 
 ==== Gradio UI and application.
 
-From a terminal, create an OpenShift application.
+From a terminal, create an OpenShift application. Obtain the 
+https://raw.githubusercontent.com/redhat-na-ssa/demo-ai-weaviate/refs/heads/main/deploy/weaviate/configmap.yaml[Weaviate API key]
+and use it to create the RAG application.
 
 - `oc new-app python~https://github.com/redhat-na-ssa/demo-ai-weaviate --name rag --context-dir=/src --env WEAVIATE_API_KEY=your_weaviate_admin-api-key`
 
