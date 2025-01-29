@@ -84,10 +84,7 @@ Install the AlphaVantage syncronizer in the `camel` namespace. Configure the
 
 From a terminal, create an OpenShift application.
 
-- `oc new-app \
-python~https://github.com/redhat-na-ssa/demo-ai-weaviate
-  --name rag --context-dir=/src
-  --env WEAVIATE_API_KEY=your_weaviate_admin-api-key`
+- `oc new-app python~https://github.com/redhat-na-ssa/demo-ai-weaviate --name rag --context-dir=/src --env WEAVIATE_API_KEY=your_weaviate_admin-api-key`
 
 Expose the app with an external route and have fun.
 
