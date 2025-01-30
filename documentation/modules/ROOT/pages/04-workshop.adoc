@@ -28,6 +28,8 @@ operator
   * https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest[Helm]
   * https://maven.apache.org/download.cgi[Maven]
   * https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/[The Openshift `oc` cli]
+- An https://www.alphavantage.co/support/#api-key[AlphaVantage API Key] if you want to periodically 
+refresh the stock symbol data.
 
 === Installing the environment
 
@@ -61,19 +63,15 @@ Follow the instructions to install the caching proxy in the `camel` namespace.
 - `oc new-project camel`
 - `git clone https://github.com/joshdreagan/av-caching-proxy.git`
 - `cd av-caching-proxy`
-
-Create the `deployment.yml`, and `configmap.yml` files from the available templates
-and update them with your values.
-
 - `cp src/main/jkube/deployment.yml.template src/main/jkube/deployment.yml`
 - `cp src/main/jkube/configmap.yml.template src/main/jkube/configmap.yml`
 - `mvn -P openshift clean package oc:deploy`
 
+The default values for `deployment.yml`, and `configmap.yml` should be fine. 
+
 ===== Stock Overview Syncronizer
 
-Install the AlphaVantage syncronizer in the `camel` namespace. Configure the `src/main/jkube/configmap.yml`
-to use the `all-minilm` vectorizer model 
-and the `granite3-dense:8b` generative model.
+Install the AlphaVantage syncronizer in the `camel` namespace. 
 
 - `git clone https://github.com/joshdreagan/av-overview-sync.git`
 - `cd av-overview-sync`
@@ -81,6 +79,11 @@ and the `granite3-dense:8b` generative model.
 - `cp src/main/jkube/configmap.yml.template src/main/jkube/configmap.yml`
 - `cp src/main/jkube/secret.yml.template src/main/jkube/secret.yml`
 - `mvn -P openshift clean package oc:deploy`
+
+Configure the `src/main/jkube/configmap.yml` to use the `all-minilm` vectorizer model 
+and the `granite3-dense:8b` generative model.
+
+Update your base64 encoded AlphaVantage API Key in the `src/main/jkube/secret.yml` file.
 
 ==== Gradio UI and application.
 
